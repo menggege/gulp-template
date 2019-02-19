@@ -1,0 +1,29 @@
+<!doctype html>
+<html {% if theme %}class="{{theme}}"{% endif %}>
+<head>
+    {% include "_head_meta.html" %}
+    {% include "_head_css.html" %}
+    {% include "_head_scripts.html" %}
+    <title>{% block title %}{% endblock %}</title>
+    {% block head %}{% endblock %}
+</head>
+<body>
+<header>
+    {% block header %}
+        {% include "../common/_header.html" %}
+    {% endblock %}
+</header>
+<nav>
+    {% block nav %}
+        {% include "../common/_nav.html" %}
+    {% endblock %}
+</nav>
+<div class="main">{% block main %}{% endblock %}</div>
+<footer>
+    {% block footer %}
+        {% include "../common/_footer.html" %}
+    {% endblock %}
+</footer>
+</body>
+{% block end %}{% endblock %}
+</html>

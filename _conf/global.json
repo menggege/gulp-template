@@ -1,0 +1,6 @@
+{
+  "theme":"syj1",
+  "css_path":"css/",
+  "js_path":"js/",
+  "rev":"?rev=@@hash"
+}

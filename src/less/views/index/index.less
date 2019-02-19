@@ -1,0 +1,77 @@
+
+@import (reference) "section2";
+
+.base(){
+  background: @whitesmoke;
+  color: @color;
+}
+.syj{
+  @import  "../../_variables/color";
+  .base;
+}
+.syj1{
+  @import "../../_variables/color1";
+  .base;
+}
+.main{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+a {
+  display: flex;
+  .box-shadow(2px, 5px);
+}
+
+.box-shadow (@x: 0, @y: 0, @blur: 1px, @color: #000) {
+  box-shadow: @arguments;
+}
+
+.mixin (dark, @color) {
+  color: darken(@color, 10%);
+}
+.mixin (light, @color) {
+  color: lighten(@color, 10%);
+}
+.mixin (@_,@_) {
+  display: block;
+}
+
+.class{
+  .mixin(light,#fff)
+}
+
+.test(@a){
+  color: @a;
+}
+.test(@a,@b){
+  color: fade(@a,@b);
+}
+
+a {
+  .test(#fff)
+}
+
+a {
+  .test(#fff,#000)
+}
+
+.bundle {
+  .button () {
+    display: block;
+    border: 1px solid black;
+    background-color: grey;
+    &:hover { background-color: white }
+  }
+  .tags{
+    background: #fff;
+  }
+}
+
+#header a {
+  color: orange;
+  .bundle .tags;
+}
+#var{
+  @color:#fff;
+}
